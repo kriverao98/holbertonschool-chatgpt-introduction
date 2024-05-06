@@ -4,7 +4,8 @@ class Checkbook:
         Initialize a Checkbook object with a balance of 0.0.
 
         Function Description:
-        - This method initializes a Checkbook object with an initial balance of $0.0.
+        - This method initializes a Checkbook
+        object with an initial balance of $0.0.
 
         Parameters:
         - self: The instance of the Checkbook class being initialized.
@@ -36,8 +37,10 @@ class Checkbook:
         Deposit funds into the checkbook.
 
         Function Description:
-        - This method deposits a specified amount of funds into the checkbook.
-        - It updates the balance and prints a confirmation message with the updated balance.
+        - This method deposits a specified amount of
+        funds into the checkbook.
+        - It updates the balance and prints a
+        confirmation message with the updated balance.
 
         Parameters:
         - self: The instance of the Checkbook class.
@@ -49,7 +52,7 @@ class Checkbook:
         self.balance += amount
         print("Deposited ${:.2f}".format(amount))
         print("Current Balance: ${:.2f}".format(self.balance))
-            
+
     def withdraw(self, amount):
         """
         Withdraw funds from the checkbook.
@@ -57,7 +60,8 @@ class Checkbook:
         Function Description:
         - This method withdraws a specified amount of funds from the checkbook.
         - It checks if the withdrawal amount exceeds the current balance.
-        - If there are sufficient funds, it updates the balance and prints a confirmation message with the updated balance.
+        - If there are sufficient funds, it updates
+        the balance and prints a confirmation message with the updated balance.
         - If there are insufficient funds, it prints a message indicating so.
 
         Parameters:
@@ -88,14 +92,17 @@ class Checkbook:
         - None
         """
         print("Current Balance: ${:.2f}".format(self.balance))
-        
+
 
 def main():
     """
     Main function to interact with the Checkbook.
 
     Function Description:
-    - This function creates an instance of the Checkbook class and allows the user to perform various actions such as depositing funds, withdrawing funds, checking the balance, or exiting the program.
+    - This function creates an instance of the
+    Checkbook class and allows the user to perform
+    various actions such as depositing funds,
+    withdrawing funds, checking the balance, or exiting the program.
 
     Parameters:
     - None
@@ -105,19 +112,21 @@ def main():
     """
     cb = Checkbook()
     while True:
-        action = input("What would you like to do? (deposit, withdraw, balance, exit): ")
+        action = (input("What would you like to do? "
+                        "(deposit, withdraw, balance, exit): "))
         if action.lower() == 'exit':
             break
         elif action.lower() == 'deposit':
             amount = cb.handle_num_input("Enter the amount to deposit: $")
             cb.deposit(amount)
         elif action.lower() == 'withdraw':
-            amount = cb.handle_num_input("Enter the amount to deposit: $")
+            amount = cb.handle_num_input("Enter the amount to withdraw: $")
             cb.withdraw(amount)
         elif action.lower() == 'balance':
             cb.get_balance()
         else:
             print("Invalid command. Please try again.")
+
 
 if __name__ == "__main__":
     main()
