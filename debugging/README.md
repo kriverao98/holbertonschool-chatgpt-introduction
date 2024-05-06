@@ -1,1 +1,1 @@
-This directory contains files for the Chat GPT - Introduction projects.
+This directory contains files for the Chat GPT - Introduction projects.gi
